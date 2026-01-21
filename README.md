@@ -27,8 +27,8 @@ chmod +x Installer.sh
 Options include installing Photoshop, Lightroom, both, or "prefix only" (deps + optional dark mode). You can also choose a custom prefix path.
 
 Download sources:
-- PhotoshopPortable.tar.gz: https://drive.google.com/file/d/1ZaDXQ-4cX0tgQgQTG777esYd_WmitBc1/view?usp=sharing
-- LightroomPortable.tar.gz: https://drive.google.com/file/d/1y0rEsa405nQd7MLv0ndiYGAJHkMEUHkV/view?usp=sharing
+- [PhotoshopPortable.tar.gz](https://drive.google.com/file/d/1ZaDXQ-4cX0tgQgQTG777esYd_WmitBc1/view?usp=sharing)
+- [LightroomPortable.tar.gz](https://drive.google.com/file/d/1y0rEsa405nQd7MLv0ndiYGAJHkMEUHkV/view?usp=sharing)
 
 To uninstall:
 
