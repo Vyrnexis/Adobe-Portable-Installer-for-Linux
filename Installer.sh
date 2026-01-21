@@ -517,17 +517,8 @@ create_desktop_for_exe() {
       workdir="$5"
       icon="$6"
       tmp="$(mktemp)"
-      cat > "$tmp" <<EOF
-[Desktop Entry]
-Type=Application
-Name=$app_name
-Exec=env WINEPREFIX=\"$prefix\" wine \"$exe\"
-Path=$workdir
-Icon=$icon
-Terminal=false
-Categories=Graphics;Photography;
-StartupNotify=true
-EOF
+      printf "[Desktop Entry]\nType=Application\nName=%s\nExec=env WINEPREFIX=\"%s\" wine \"%s\"\nPath=%s\nIcon=%s\nTerminal=false\nCategories=Graphics;Photography;\nStartupNotify=true\n" \
+        "$app_name" "$prefix" "$exe" "$workdir" "$icon" > "$tmp"
       chmod 0644 "$tmp"
       mv "$tmp" "$dest"
     ' bash "$desktop_file" "$name" "$PREFIX" "$exe_abs" "$workdir" "$icon_field"
