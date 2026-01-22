@@ -38,6 +38,10 @@ WINETRICKS_DEPS=(
   gdiplus
 )
 
+DLL_OVERRIDES=(
+  "msxml3=builtin"
+)
+
 # ---------------- Helpers ----------------
 # Print error and exit.
 die() { printf "Error: %s\n" "$*" >&2; exit 1; }
@@ -342,6 +346,19 @@ install_deps_once() {
   touch "$marker"
 }
 
+# ---------------- Overrides ----------------
+# Apply Wine DLL overrides for this prefix.
+apply_dll_overrides() {
+  local entry dll value
+  for entry in "${DLL_OVERRIDES[@]}"; do
+    dll="${entry%%=*}"
+    value="${entry#*=}"
+    run_quiet_spinner "Setting override ${dll}=${value}..." "$LOG_DIR/dll-overrides.log" \
+      env WINEPREFIX="$PREFIX" wine reg add "HKCU\\Software\\Wine\\DllOverrides" /v "$dll" /t REG_SZ /d "$value" /f
+  done
+  echo "[✓] DLL overrides applied."
+}
+
 # ---------------- Prompts ----------------
 # Prompt for app install selection.
 select_menu() {
@@ -563,6 +580,7 @@ main() {
 
   ensure_prefix
   install_deps_once
+  apply_dll_overrides
 
   dark="$(ask_dark_mode)"
   if [[ "$dark" == "yes" ]]; then
