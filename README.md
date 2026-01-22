@@ -28,7 +28,7 @@ Options include installing Photoshop, Lightroom, both, or "prefix only" (deps + 
 
 Download sources:
 - [PhotoshopPortable.tar.gz](https://drive.google.com/file/d/1ZaDXQ-4cX0tgQgQTG777esYd_WmitBc1/view?usp=sharing)
-- [LightroomPortable.tar.gz](https://drive.google.com/file/d/1y0rEsa405nQd7MLv0ndiYGAJHkMEUHkV/view?usp=sharing)
+- [LightroomPortable.tar.gz](https://drive.google.com/file/d/1al_zK8KXj4vyBwUg4QkEEEP4OcyR00q-/view?usp=sharing)
 
 To uninstall:
 
